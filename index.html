@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SimU: The Online University User Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #0c4ea8;
+      --primary-dark: #2360d2;
+      --accent: #54e7e2;
+      --bright: #63ffd6;
+      --bg: #f7fbff;
+      --card-bg: #fff;
+      --note-bg: linear-gradient(90deg, #63ffd6 0%, #54e7e2 40%, #5d7ca6 95%);
+      --note-color: #fff;
+      --section-border: #b2dbff;
+      --shadow: 0 2px 16px #4581ff19;
+      --tip-bg: #e6f6ff;
+      --tip-color: #2360d2;
+      --text: #5d7ca6;
+      --link: #4581ff;
+      --link-hover: #63ffd6;
+      --footer-text: #7ea3c7;
+      --footer-muted: #b2dbff;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Helvetica Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 22px 0 48px 0;
+      transition: background 0.35s, color 0.25s;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 8px;
+    }
+    .logo-title img {
+      height: 56px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px #0002;
+      background: var(--card-bg);
+      padding: 4px;
+    }
+    .logo-title h1 {
+      color: var(--primary);
+      margin: 0;
+      font-size: 2.05em;
+      letter-spacing: 0.01em;
+      font-weight: 800;
+    }
+    @media (max-width: 500px) {
+      .logo-title img { height: 38px; }
+      .logo-title { gap: 9px; }
+      .logo-title h1 { font-size: 1.1em; }
+    }
+    .note {
+      color: var(--note-color);
+      background: var(--note-bg);
+      font-weight: bold;
+      margin-bottom: 24px;
+      margin-top: 16px;
+      font-size: 1.07em;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 1px 12px #54e7e239;
+      padding: 10px 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section {
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--section-border);
+      padding: 24px 32px 18px 32px;
+      margin-bottom: 32px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.3s, color 0.25s;
+    }
+    @media (max-width: 700px) {
+      .section { padding: 16px 7vw; }
+    }
+    @media (max-width: 400px) {
+      .section { padding: 12px 2vw; }
+    }
+    .emoji { font-size: 1.2em; vertical-align: middle; }
+    ul, ol { margin-left: 24px; margin-bottom: 20px; }
+    li { margin-bottom: 16px; line-height: 1.55; }
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+    .emoji-list {
+      list-style: none;
+      padding: 0;
+      margin-left: 0;
+    }
+    .emoji-list li {
+      display: block;
+      margin-bottom: 18px;
+      padding-left: 0;
+    }
+    .icon-title-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38em;
+      min-width: 0;
+      /* Allow wrapping if absolutely needed on small screens */
+    }
+    .emoji-list .emoji {
+      font-size: 1.28em;
+      margin-right: 0.10em;
+      width: 1.25em;
+      text-align: center;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .emoji-list .feature-title {
+      font-weight: bold;
+      white-space: nowrap;
+      margin-right: 0.08em;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .tip-box {
+      background: var(--tip-bg);
+      color: var(--tip-color);
+      border-radius: 10px;
+      margin: 26px auto 0 auto;
+      max-width: 430px;
+      padding: 10px 18px;
+      box-shadow: 0 1px 8px #54e7e216;
+      text-align: center;
+      font-size: 1.06em;
+    }
+    .footer-icons img {
+      vertical-align: middle;
+      margin: 0 10px 0 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+      background: #fff;
+      padding: 2px;
+      transition: box-shadow 0.2s;
+    }
+    .footer-icons img:hover {
+      box-shadow: 0 4px 16px var(--primary-dark)44;
+    }
+    .footer {
+      text-align: center;
+      color: var(--footer-text);
+      font-size: 0.96em;
+      margin-top: 40px;
+    }
+    .footer a { color: var(--footer-text); }
+    .footer span { color: var(--footer-muted); }
+    /* --- DARK MODE --- */
+    body.dark {
+      --bg: #1a2036;
+      --card-bg: #23294d;
+      --note-bg: linear-gradient(90deg, #4581ff 10%, #54e7e2 90%);
+      --note-color: #fff;
+      --section-border: #3264aa;
+      --shadow: 0 2px 16px #4581ff38;
+      --tip-bg: #243063;
+      --tip-color: #54e7e2;
+      --text: #f6faff;
+      --link: #63ffd6;
+      --link-hover: #54e7e2;
+      --footer-text: #6cbcf9;
+      --footer-muted: #54e7e2;
+    }
+    .dark .logo-title h1 { color: #63ffd6; }
+    .dark .logo-title img { background: #23294d; }
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 26px;
+      z-index: 22;
+      background: var(--card-bg);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 1em;
+      box-shadow: 0 2px 8px #0002;
+      cursor: pointer;
+      padding: 7px 16px 7px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.25s, color 0.22s, border 0.19s;
+    }
+    .toggle-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--bright);
+    }
+    @media (max-width: 700px) {
+      .toggle-btn { top: 14px; right: 8px; padding: 6px 13px 6px 11px; font-size: 0.99em;}
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleMode()" title="Toggle dark mode">
+    <span id="toggle-icon" style="font-size:1.2em;">🌙</span> <span id="toggle-label">Dark Mode</span>
+  </button>
+  <div class="logo-title">
+    <img src="https://i.ibb.co/6JLY17kv/U-1.png" alt="SimU Logo">
+    <h1>SimU: The Online University User Guide</h1>
+  </div>
+  
+  <div class="section">
+    <h2><span class="emoji">🏫</span> Welcome to SimU!</h2>
+    <p>Welcome to <b>SimU</b>: The Online University — a flexible, self-paced academic experience designed for Sims who value independence, curiosity, and personal progress.<br><br>
+    
+Although primarily an online university, <b>SimU</b> offers other programs too, like <b>Online Skill Classes</b>, and a learning program for high school dropouts, enabling Sims to earn their <b>GED</b> (General Education Diploma) online. (Yes, Teens are included).<br><br>
+
+<b>SimU</b> offers 13 accredited degree programmes delivered entirely online, allowing Sims to balance study alongside careers, family life, and hobbies. There are no timetables, no term limits, and no pressure to perform on anyone’s schedule but your own.<br><br>
+
+Whether your Sim is pursuing higher education for career advancement, intellectual fulfilment, or simply because it seemed like a good idea at the time, <b>SimU</b> provides the tools to succeed — at a pace that fits their life. And best of all, it's <b>100% Base Game Compatible</b>!</p>
+    <p>All you need to get started is the mod itself, my <a href="https://www.patreon.com/posts/121729961" target="_blank"><b>modlibrary</b></a>, and <a href="https://lot51.cc/mods/core-library" target="_blank"><b>Lot 51's Core Library</b></a>.<br><br>If you have my old <b>SimU Online Skill Classes</b> or <b>SimU Online Degrees</b> mods, this replaces them both.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="emoji">🎓</span> How SimU Works</h2>
+    <ul class="emoji-list">
+<li><strong>SimU</strong> is a brand new academic experience, that can be completed from wherever you are in SimNation; this university is 100% online. Degrees are structured around six academic modules, completed sequentially. Each module represents a focused area of study within your chosen degree program.</li>
+<li>No deadlines; Sims may progress steadily or take breaks as needed. <strong>Coursework</strong> can be completed at any time, and extra studying and quality work can lead to an <strong>Honors</strong> degree. <strong>SimU</strong> rewards dedication&mdash;not micromanagement.</li>
+</ul>
+  </div>
+
+  <div class="section">
+    <h2><span class="emoji">📝</span> Getting Started</h2>
+    <ul class="emoji-list">
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">📍</span>
+          <span class="feature-title">SimU Degrees</span>
+        </span>
+        <p><p><strong>SimU</strong> offers 13 degrees in Arts or Science, plus Honors. Each degree offers a boost in a different career. Head to Computer, or Phone → Household, and <b>View Degrees</b> under the <b>SimU</b> menu to see the career benefits each offers. (benefits for my custom careers are included too)</p>
+<ul style="list-style-type: circle;">
+<li><b>• Art History
+<li>• Biology
+<li>• Communications
+<li>• Computer Science
+<li>• Criminology
+<li>• Culinary Arts
+<li>• Drama
+<li>• Economics
+<li>• Fine Arts
+<li>• History
+<li>• Language &amp; Literature
+<li>• Physics
+<li>• Psychology</b></li>
+</ul>
+        <span class="icon-title-row">
+          <span class="emoji">✍</span>
+          <span class="feature-title">Registration</span>
+        </span>
+        <br>
+        Head to a Computer, or Phone → Household, and find the <b>SimU</b> menu. Registration is <b>§500</b>, and covers access to the <b>SimU</b> Academic Resource Hub, and degree enrollment options.</li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">💲</span>
+          <span class="feature-title">Tuition & Fees</span>
+        </span>
+        <br>
+        Tuition fees are paid per degree and may be settled upfront, per term or through approved student loan options. All financial interactions are managed through the <b>SimU</b> menu on a computer or phone app (under Household). Once paid, Sims can choose their degree, and will receive their <b>SimU</b> Coursework Notebook and Digital Sketchpad, which are automatically added to their inventory. These are essential for completing assignments and optional <b>Extra Credit</b> studies.</ul>
+  </ul>
+  </div>
+
+    <div class="section">
+    <h2><span class="emoji">📘</span> Coursework & Modules</h2>
+    <ul class="emoji-list">
+      <li>
+        <span class="icon-title-row">
+
+        </span>
+       
+        Each <b>SimU</b> degree consists of six modules, each focusing on a specific academic theme.<br><br>Modules include:<br><br>
+
+• <b>A set of coursework assignments</b><br><br>
+
+• <b>Optional studying opportunities</b><br><br>
+
+• <b>Skill-building activities</b><br><br>
+
+• <b>Performance tracking toward final outcomes</b><br><br>
+
+Modules must be completed in order, but may be worked through at any pace. There is no requirement to “keep up” — progress is entirely in the Sim’s control.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">📓</span>
+          <span class="feature-title">Coursework Assignments</span>
+        </span>        
+        <br>Assignments represent applied academic tasks such as research, writing, analysis, or practical fieldwork. These may be completed using:<br><br>
+        • <b>The <b>SimU</b> Coursework Notebook</b><br><br>
+        • <b>A computer</b><br><br>
+        • <b>In-world activities relevant to the subject</b><br><br>
+
+Once completed, assignments can be:<br><br>
+• <b>Proofread</b><br><br>
+• <b>Edited</b><br><br>
+• <b>Submitted for assessment</b><br><br>
+
+In addition to required coursework, Sims may engage in optional studying, which can increase their chances of graduating with Honors<br><br>They can email their Professor to ask for <b>Extra Credit</b> assignments from the <b>SimU</b> menu. Optional studying is never mandatory — but it is rewarded.
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><span class="emoji">🧠</span> Academic Progress & Outcomes</h2>
+    <ul class="emoji-list">
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">📈</span>
+          <span class="feature-title">Module Performance</span>
+        </span>
+        <br>
+        Each module contributes to the Sim’s overall academic record. After the first module is complete, performance can be checked from the <b>SimU</b> menu, or by emailing the professor, and is influenced by:<br><br>
+        • <b>Assignment quality</b><br><br>
+        • <b>Optional study effort</b><br><br>
+        • <b>Consistency across modules</b><br>
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">✅️</span>
+          <span class="feature-title">Final Exam</span>
+        </span>
+        <br>
+        At the conclusion of the final module, Sims may book their <b>Final Exam</b>. Preparation is strongly encouraged — Sims who study tend to fare better. Study for the test in the <b>Student Notebook</b> or on the Computer. Sims will have to wait a while for the results to come in! Try not to panic in the meantime.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">🎓</span>
+          <span class="feature-title">Degree Classification</span>
+        </span>
+        <br>
+        Upon graduation, Sims are awarded either:<br><br>
+• <b>Standard Degree</b><br><br>
+• <b>Honors Degree</b><br><br>
+
+Honors outcomes reflect sustained effort across the entire programme, not a single moment of brilliance.
+      </li>
+    </ul>
+  </div>
+  
+ <div class="section">
+<h2>⭐ Extra Features</h2>
+<ul class="emoji-list">
+<li>&bull; <strong>A custom skill, <strong>Academic Aptitude</strong>, which includes unlockable interactions, brand-new readable books, and even an exclusive&nbsp;<strong>hidden career</strong>!</strong></li>
+<li>&bull; <strong>Write and publish a guidebook to <strong>Academic Aptitude&nbsp;</strong>(Level 5</strong></li>
+<li>&bull; <strong>LinkUs</strong>, the Phone app for academics that offers <strong>Study Groups</strong>, <strong>tips</strong>, and more (Level 7)</li>
+<li>&bull; <strong>Academic eJournals </strong>are available on the <strong>SimU </strong>Phone Portal or Slablet for fast, on-the-go learning (Level 5)</li>
+<li>&bull; Start an <strong>Academic Blog&nbsp;</strong>with <strong>Scholar<em>ish</em></strong>, earning followers, and maybe some revenue, too! (Level 7)</li>
+<li>&bull; <strong>The SimU Signal</strong> is also a brand-new feature, available at Level 7 of the <strong>Academic Aptitude </strong>Skill, or to&nbsp;<strong>SimU</strong> students. There you can read the newsletter, contribute to it, or take on academic gigs to make some money on the side</li>
+</ul>
+<p>There are many other features, and you'll be notified as each is unlocked.</p>
+</div>
+  
+    <div class="section">
+    <h2><span class="emoji">❓</span> Frequently Asked Questions</h2>
+    <ul class="emoji-list">
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">📈</span>
+          <span class="feature-title">Can my Sim fail a degree?</span>
+        </span>
+        <br>
+        There is no failure state. Outcomes reflect effort, not perfection.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">💻</span>
+          <span class="feature-title">How do I know where to complete the assignments?</span>
+        </span>
+        <br>
+        Hover your mouse over the assignment in the career panel, and you'll see the instructions for completion.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">📓</span>
+          <span class="feature-title">What happens if I lose the notebook?</span>
+        </span>
+        <br>
+        A replacement can be ordered from the <b>SimU</b> Online Store at any time.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">🎒</span>
+          <span class="feature-title">Can I study multiple degrees simultaneously?</span>
+        </span>
+        <br>
+        You can only study one degree at a time, but the registration fee is waived for returning students looking to join a new degree program.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">🗒️</span>
+          <span class="feature-title">I accidentally canceled the coursework module.</span>
+        </span>
+        <br>
+        You'll need to restart the module from the <b>SimU</b> Computer menu.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">💻</span>
+          <span class="feature-title">The next assignment isn't showing up. Where is it?</span>
+        </span>
+        <br>
+        The assignments won't be correctly marked as complete if you used <b>UI Cheats</b> or similar to cheat completion of a task. You'll need to abandon the module by clicking the trash can, and restarting it from the <b>SimU</b> Computer menu.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">💼</span>
+          <span class="feature-title">What are the career benefits for each degree?</span>
+        </span>
+        <br>
+        From the <b>SimU</b> menu on a Phone or Computer, <b>View Degrees</b> to see a list of every career that the degrees benefit. All of EA's careers are included to date, plus my own custom careers if you have them installed.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">⚙️</span>
+          <span class="feature-title">Is this mod compatible with <b>Kuttoe</b>'s Career Overhaul mod?</span>
+        </span>
+        <br>
+        Yes, I've included an override for the degree objectives that includes mine, and the degrees from <b>Discover University</b>.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">💡</span>
+          <span class="feature-title">What is the Academic Aptitude Skill?</span>
+        </span>
+        <br>
+        The included Skill is custom, and revolves around learning and scholarly practice. It can be increased by taking online classes, and using the <b>Academic Resource Hub</b>.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">🔎</span>
+          <span class="feature-title">Do I need to register for a degree just to access the Online Skills feature?</span>
+        </span>
+        <br>
+        No. Just like the original version of Online Skills, you can <b>Browse Digital Study Guides</b> from the Computer whenever you like. More involved <b>LearnLab</b> Classes are available at Level 2 of the <b>Academic Aptitude</b> Skill, and a Phone option at Level 6.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">🏢</span>
+          <span class="feature-title">Can I work and study at the same time?</span>
+        </span>
+        <br>
+        Yes! <b>SimU</b> is an online school, leaving you free to juggle a full or part time job to make ends meet.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">🎓</span>
+          <span class="feature-title">Does this mod require Discover University?</span>
+        </span>
+        <br>
+        No! <b>SimU</b> is 100% Base Game Compatible. All you need to get started is the mod itself, my <a href="https://www.patreon.com/posts/121729961" target="_blank"><b>modlibrary</b></a>, and <a href="https://lot51.cc/mods/core-library" target="_blank"><b>Lot 51's Core Library</b></a>.
+      </li>
+      <li>
+        <span class="icon-title-row">
+          <span class="emoji">💬</span>
+          <span class="feature-title">My question isn't answered here.</span>
+        </span>
+        <br>
+        No worries, the quickest way to get help is on my <a href="https://discord.gg/fUk6SAuMSp"><b>Discord</b></a>, or you can check out the support options on my <a href="https://midnitetechmods.com/"><b>website</b></a>.
+      </li>
+    </ul>
+  </div>
+
+  <div class="tip-box">
+    <strong>Tip:</strong>Check the <b>Help</b> option in-game, under the <b>SimU</b> Phone or Computer menu if you get stuck with something.
+  </div>
+
+  <div class="footer">
+    <div class="footer-icons">
+      <a href="https://www.patreon.com/c/midnitetech" target="_blank">
+        <img src="https://i.ibb.co/yFd9z0Kz/patreon-logo-png-seeklogo-503893.png" alt="Patreon" width="48" height="48" />
+      </a>
+      <a href="https://midnitetech.tumblr.com/">
+        <img src="https://i.ibb.co/vv14sxjD/free-tumblr-logo-icon-2434-thumb.png" alt="Tumblr" width="48" height="48" />
+      </a>
+      <a href="https://midnitetechmods.com/">
+        <img src="https://i.ibb.co/qLd9d3SR/myprofilepic.png" alt="Midnite Tech Mods" width="48" height="48" />
+      </a>
+    </div>
+    <p><a href="mailto:themidnitetech@gmail.com">email me</a></p>
+    <span><p><a href="https://discord.gg/fUk6SAuMSp">discord</a></p>
+    <span>
+      <a href="https://midnitetechmods.com/">midnitetechmods.com</a>
+    </span>
+
+  <script>
+    // Simple dark mode toggle - stores preference in localStorage
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      document.getElementById('toggle-icon').textContent = isDark ? '☀️' : '🌙';
+      document.getElementById('toggle-label').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      localStorage.setItem('cleanlauncher-theme', isDark ? 'dark' : 'light');
+    }
+    // On load, respect saved preference or system preference
+    (function() {
+      const saved = localStorage.getItem('cleanlauncher-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if ((saved === 'dark') || (!saved && prefersDark)) {
+        document.body.classList.add('dark');
+        document.getElementById('toggle-icon').textContent = '☀️';
+        document.getElementById('toggle-label').textContent = 'Light Mode';
+      }
+    })();
+  </script>
+</body>
+</html>
