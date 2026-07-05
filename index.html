@@ -24,6 +24,31 @@
       --footer-text: #7ea3c7;
       --footer-muted: #b2dbff;
     }
+    
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary .arrow {
+      width: 10px;
+      height: 10px;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+      fill: var(--text-color);
+    }
+
+    details[open] summary .arrow {
+      transform: rotate(90deg);
+    }
     body {
       background: var(--bg);
       color: var(--text);
@@ -231,8 +256,22 @@ Although primarily an online university, <b>SimU</b> offers other programs too, 
 <b>SimU</b> offers 13 accredited degree programmes delivered entirely online, allowing Sims to balance study alongside careers, family life, and hobbies. There are no timetables, no term limits, and no pressure to perform on anyone’s schedule but your own.<br><br>
 
 <p>Whether your Sim is pursuing higher education for career advancement, intellectual fulfillment, or simply because it seemed like a good idea at the time, <strong>SimU</strong> provides the tools to succeed, at a pace that fits their life. And best of all, it's <strong>100% Base Game Compatible</strong>!</p>
-<p>All you need to get started is the mod itself, and my <a href="https://www.patreon.com/posts/121729961" target="_blank"><strong>modlibrary</strong></a>.<br /><br />If you have my old <strong>SimU Online Skill Classes</strong> or <strong>SimU Online Degrees</strong> mods, this replaces them both. <span style="color: #ff6600;"><strong>PLEASE DELETE THEM</strong></span>.</p>
-  </div>
+<p>All you need to get started is the mod itself, and my <a href="https://www.patreon.com/posts/121729961" target="_blank"><strong>modlibrary</strong></a>.<br /><br />If you have my old <strong>SimU Online Skill Classes</strong> or <strong>SimU Online Degrees</strong> mods, this replaces them both. <span style="color: #ff6600;"><strong>PLEASE DELETE THEM</strong></span>.</p>      <details>
+      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>UPDATE‼️IMPORTANT OPEN ME‼️</summary>
+    
+<ul>
+
+<p>🗓️ <strong>Updated to the July 2026 version of SimU?</strong></p>
+<p class="isSelectedEnd">If your Sim is already partway through a module, you <strong>don't need to start over</strong>. The new version requires <strong>6 Coursework Credits</strong> (1 credit per completed assignment) to unlock the <strong>Write Module Paper</strong> or <strong>Write Dissertation</strong> assignment.</p>
+<p class="isSelectedEnd">To sync your current progress:</p>
+<ol start="1" data-spread="false">
+<li>Press <strong>Ctrl + Shift + C</strong> to open the cheat console.</li>
+<li>Enter: <code>stats.set_stat midnitetech:simu_statistic_objectiveprogress X</code></li>
+<li>Replace <strong>X</strong> with the number of assignments your Sim has already completed.</li>
+</ol>
+<p><strong>Example:</strong> If your Sim has already finished <strong>4 assignments</strong>, enter: <code>stats.set_stat midnitetech:simu_statistic_objectiveprogress 4</code></p>
+<p>Your Sim will then only need to complete <strong>2 more assignments</strong> before the final paper or dissertation becomes available.</p></div>
+
 
   <div class="section">
     <h2><span class="emoji">🎓</span> How SimU Works</h2>
