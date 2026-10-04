@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>SimU: Academic Life User Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #f7fbff;
@@ -19,23 +20,6 @@
       --tip-bg: #ffe4d2;
       --tip-color: #ef9300;
     }
-    .important-box {
-  background: var(--tip-bg);
-  border-left: 4px solid var(--border-accent-tip);
-  border-radius: 8px;
-  padding: 10px 14px;
-  margin-bottom: 1.2em;
-  color: var(--tip-color);
-}
-
-.important-box summary {
-  color: var(--tip-color);
-  font-weight: bold;
-}
-
-.important-box summary .arrow {
-  fill: var(--tip-color);
-}
 
     a:link, a:visited {
     background-color: #89afc0;
@@ -61,14 +45,99 @@
       --border-accent: #66aaff;
       --code-bg: #444;
     }
+    .ibm-plex-mono-thin {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+    }
+
+    .ibm-plex-mono-extralight {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 200;
+    font-style: normal;
+    }
+
+    .ibm-plex-mono-light {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    }
+
+    .ibm-plex-mono-regular {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    .ibm-plex-mono-medium {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    }
+
+    .ibm-plex-mono-semibold {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: normal;
+    }
+
+    .ibm-plex-mono-bold {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    }
+
+    .ibm-plex-mono-thin-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+    font-style: italic;
+    }
+
+    .ibm-plex-mono-extralight-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 200;
+    font-style: italic;
+    }
+
+    .ibm-plex-mono-light-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: italic;
+    }
+
+    .ibm-plex-mono-regular-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+    }
+
+    .ibm-plex-mono-medium-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: italic;
+    }
+
+    .ibm-plex-mono-semibold-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: italic;
+    }
+
+    .ibm-plex-mono-bold-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+    }
+
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 17px;
       line-height: 1.7;
       background-color: var(--bg-color);
       color: var(--text-color);
       padding: 40px 20px;
+      font-style: bold;
       display: flex;
       justify-content: center;
       transition: background 0.3s, color 0.3s;
@@ -99,7 +168,7 @@
     .toggle-button {
       background: var(--card-bg);
       color: var(--text-color);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'IBM Plex Mono', monospace;
       border: 2px solid var(--border-accent);
       padding: 6px 14px;
       border-radius: 8px;
@@ -204,7 +273,7 @@
 
     .website-button {
       display: inline-block;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'IBM Plex Sans Condensed', monospace;
       font-weight: bold;
       font-size: 1.1em;
       color: #f7fbff;
@@ -221,20 +290,21 @@
     }
 
     details {
-      margin-bottom: 1.2em;
+      margin-bottom: 0.5em;
       background-color: var(--highlight);
       border-left: 4px solid var(--border-accent);
       border-radius: 8px;
-      padding: 10px 14px;
+      padding: 6px 6px;
     }
 
     summary {
+    justify-content: center;
       cursor: pointer;
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 1.2em;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 1px;
     }
 
     summary::-webkit-details-marker {
@@ -242,8 +312,8 @@
     }
 
     summary .arrow {
-      width: 10px;
-      height: 10px;
+      width: 15px;
+      height: 15px;
       flex-shrink: 0;
       transition: transform 0.25s ease;
       fill: var(--text-color);
@@ -252,6 +322,68 @@
     details[open] summary .arrow {
       transform: rotate(90deg);
     }
+
+    .card p img {
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+
+    .website-button strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .website-button strong img {
+      margin-right: 0;
+      flex-shrink: 0;
+    }
+
+    a.website-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 10px;
+      line-height: 1.4;
+    }
+
+    a.website-button strong {
+      display: flex;
+      align-items: center;
+    }
+    details.tip-box {
+    background: var(--tip-bg);
+    color: var(--tip-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--border-accent-tip);
+}
+
+details.tip-box summary {
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+details.tip-box summary .arrow {
+    fill: var(--tip-color);
+}
+summary {
+    position: relative;
+    justify-content: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+summary .arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+details[open] summary .arrow {
+    transform: translateY(-50%) rotate(90deg);
+}
   </style>
 </head>
 <body>
@@ -262,22 +394,24 @@
 
     <img src="https://i.ibb.co/G3rMw5Q7/Copy-of-Copy-of-Patreon-Banner-Template.png" alt="Mod Banner" class="banner">
 
-       <div class="tip-box">
-    <strong>⚠️REQUIRED </strong> <br>
+<details class="tip-box">
+    <summary>
+        <svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>
+    <img src="https://i.ibb.co/GvnDhVj5/headline-exclamationmark.png" alt="" width="32" height="32" /> REQUIRED</summary>
+   
     
-<p style="text-align: center;"><a href="https://www.patreon.com/posts/midnitetech-121729961" target="_blank" class="website-button"><strong>📁midnitetech_modlibrary</strong></a><br /></p>
-</div>
-    
-    
-<details class="important-box">
-<summary>
-  <svg class="arrow" viewBox="0 0 8 8">
-    <path d="M0 0 L6 4 L0 8 Z"/>
-  </svg>
-  ⚠️ Important Information
-</summary>
+<p style="text-align: center;">
+    <a class="website-button" href="https://www.patreon.com/posts/midnitetech-121729961" target="_blank">
+        <strong><img src="https://i.ibb.co/ZZtpnM6/MODLIB.png" alt="" width="32" height="32" style="vertical-align: middle;" /> midnitetech_modlibrary</strong>
+    </a>
+</p>
+ <p>My ModLib is required for most of my mods. Ensure it's installed in your <strong>Mods</strong> folder and that you have the latest version. All <code>.ts4script</code> files must be no more than <strong>one folder deep</strong> inside your Mods folder, as shown below.</p>
 
-      <p>🗓️ <strong>Updated to the July 2026 version of SimU?</strong></p>
+      ✅ <strong>Correct:</strong><br>
+      <code>Mods/MyModFolder/MyMod.ts4script</code><br>
+      ❌ <strong>Incorrect:</strong><br>
+      <code>Mods/MyModFolder/AnotherFolder/MyMod.ts4script</code>
+    <p>🗓️ <strong>Updated to the July 2026 version of SimU?</strong></p>
 <p class="isSelectedEnd">If your Sim is already partway through a module, you <strong>don't need to start over</strong>. The new version requires <strong>6 Coursework Credits</strong> (1 credit per completed assignment) to unlock the <strong>Write Module Paper</strong> or <strong>Write Dissertation</strong> assignment.</p>
 <p class="isSelectedEnd">To sync your current progress:</p>
 <ol start="1" data-spread="false">
@@ -290,52 +424,47 @@
 </details>
 
 
-    <details>
-      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>🏫Welcome to SimU: Academic Life!</summary>
+    <details> <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg><img src="https://i.ibb.co/JwKR4KF2/Sim-U-Logo.png" alt="" width="50" height="50" /> WELCOME TO SIMU: ACADEMIC LIFE</summary>
     
 <p>Welcome to <strong>SimU</strong>: The Online University, a flexible, self-paced academic experience designed for Sims who value independence, curiosity, and personal progress.<br /><br />Although primarily an online university, <strong>SimU</strong> offers other programs too, like <strong>Online Skill Classes</strong> and a learning program for high school dropouts, enabling Sims to earn their <strong>GED</strong> (General Education Diploma) online. (Yes, Teens are included).<br /><br /><strong>SimU</strong> offers 13 accredited degree programs delivered entirely online, allowing Sims to balance study alongside careers, family life, and hobbies. There are no timetables, no term limits, and no pressure to perform on anyone’s schedule but your own.<br /><br /></p>
 <p>Whether your Sim is pursuing higher education for career advancement, intellectual fulfillment, or simply because it seemed like a good idea at the time, <strong>SimU</strong> provides the tools to succeed at a pace that fits their life. And best of all, it's <strong>100% Base Game Compatible</strong>!</p>
 <p>All you need to get started is the mod itself and my <a href="https://www.patreon.com/posts/121729961" target="_blank"><strong>modlibrary</strong></a>.<br /><br />If you have my old <strong>SimU Online Skill Classes</strong> or <strong>SimU Online Degrees</strong> mods, this replaces them both. <strong>PLEASE DELETE THEM</strong>.</p>
     </details>
     
-    <details>
-      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>🎓 How SimU Works</summary>
     
-<ul class="emoji-list">
+    <details> <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg><img src="https://i.ibb.co/5h9vJYph/Sims4-universtity-fac-expensionpack-08-icons-49.png" alt="" width="50" height="50" /> HOW SIMU WORKS</summary>
+    
+
 <strong>SimU</strong> is a brand new academic experience that can be completed from wherever you are in SimNation; this university is 100% online. Degrees are structured around six academic modules, completed sequentially. Each module represents a focused area of study within your chosen degree program.<br /><br />
 
-No deadlines; Sims may progress steadily or take breaks as needed. <strong>Coursework</strong> can be completed at any time, and extra studying and quality work can lead to an <strong>Honors</strong> degree. <strong>SimU</strong> rewards dedication, not micromanagement.
+No deadlines; Sims may progress steadily or take breaks as needed. <strong>Coursework</strong> can be completed at any time, and extra studying and quality work can lead to an <strong>Honors</strong> degree. <strong>SimU</strong> rewards dedication, rather than micromanagement.
 <p><strong><br /><span style="color: #ff6600;">NEW: <span style="color: #000000;">You can now also take a 3-module course, perfect for shorter lifespans. You'll be prompted upon payment.</span></span></strong></p>
 </details>
     
     
-    <details>
-      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>📝 Getting Started</summary>
+    <details> <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg><img src="https://i.ibb.co/nNCnX1Yn/headline-stressed-v3-d592aa90805547fb.png" alt="" width="50" height="50" /> GETTING STARTED</summary>
 
-<p><strong>📍</strong><span style="text-decoration: underline;"><strong>SimU Degrees</strong></span></p>
+<p><strong></strong><span style="text-decoration: underline;"><strong>SimU Degrees</strong></span></p>
 <p><strong>SimU</strong> offers 13 degrees in Arts or Science, plus Honors. Each degree offers a boost in a different career. Head to Computer, or Phone → Household, and <strong>View Degree Guide</strong> under the <strong>SimU</strong> menu to see the career benefits each offers. (benefits for my custom careers are included too)</p>
 <ul class="emoji-list">
-<li><strong>Art History</strong></li>
-<li><strong>Biology</strong></li>
-<li><strong>Communications</strong></li>
-<li><strong>Computer Science</strong></li>
-<li><strong>Criminology</strong></li>
-<li><strong>Culinary Arts</strong></li>
-<li><strong>Drama</strong></li>
-<li><strong>Economics</strong></li>
-<li><strong>Fine Arts</strong></li>
-<li><strong>History</strong></li>
-<li><strong>Language &amp; Literature</strong></li>
-<li><strong>Physics</strong></li>
-<li><strong>Psychology</strong></li>
+<li><strong><img src="https://i.ibb.co/TD3Y6QNM/5.png" alt="" width="30" height="30" /> Art History</strong></li>
+<li><strong><img src="https://i.ibb.co/KzpCF23B/11.png" alt="" width="30" height="30" /> Biology</strong></li>
+<li><strong><img src="https://i.ibb.co/5gCqXhjw/10.png" alt="" width="30" height="30" /> Communications</strong></li>
+<li><strong><img src="https://i.ibb.co/Dff53gbd/4.png" alt="" width="30" height="30" /> Computer Science</strong></li>
+<li><strong><img src="https://i.ibb.co/4wPVp31y/7.png" alt="" width="30" height="30" /> Criminology</strong></li>
+<li><strong><img src="https://i.ibb.co/7t52MXJQ/13.png" alt="" width="30" height="30" /> Culinary Arts</strong></li>
+<li><strong><img src="https://i.ibb.co/Z676VD3n/3.png" alt="" width="30" height="30" /> Drama</strong></li>
+<li><strong><img src="https://i.ibb.co/Df1ng8pW/1.png" alt="" width="30" height="30" /> Economics</strong></li>
+<li><strong><img src="https://i.ibb.co/chsz6SPS/9.png" alt="" width="30" height="30" /> Fine Arts</strong></li>
+<li><strong><img src="https://i.ibb.co/fz6Mc3Gw/6.png" alt="" width="30" height="30" /> History</strong></li>
+<li><strong><img src="https://i.ibb.co/3m6H984k/8.png" alt="" width="30" height="30" /> Language &amp; Literature</strong></li>
+<li><strong><img src="https://i.ibb.co/Kcx6H6ty/12.png" alt="" width="30" height="30" /> Physics</strong></li>
+<li><strong><img src="https://i.ibb.co/JjBXmD1d/2.png" alt="" width="30" height="30" /> Psychology</strong></li>
 </ul>
-<p><span class="icon-title-row"><span class="emoji">✍</span><span style="text-decoration: underline;"><strong><span class="feature-title">Registration</span></strong></span></span><br />Head to a Computer, or Phone → Household, and find the <strong>SimU</strong> menu. Registration is <strong>§500</strong>, and covers access to the <strong>SimU</strong> Academic Resource Hub and degree enrollment options.<br /><br /><span class="icon-title-row"><span class="emoji">💲</span><span style="text-decoration: underline;"><strong><span class="feature-title">Tuition &amp; Fees</span></strong></span></span><br />Tuition fees are paid per degree and may be settled upfront, per term, or through approved student loan options. All financial interactions are managed through the <strong>SimU</strong> menu on a computer or phone app (under Household). Once paid, Sims can select their degree and will receive their <strong>SimU</strong> Coursework Notebook in their inventory. This is essential for completing assignments and optional <strong>Extra Credit</strong> studies.</p>
+<p><span class="icon-title-row"><span class="emoji"></span><span style="text-decoration: underline;"><strong><span class="feature-title">Registration</span></strong></span></span><br />Head to a Computer, or Phone → Household, and find the <strong>SimU</strong> menu. Registration is <strong>§500</strong>, and covers access to the <strong>SimU</strong> Academic Resource Hub and degree enrollment options.<br /><br /><span class="icon-title-row"><span class="emoji"></span><span style="text-decoration: underline;"><strong><span class="feature-title">Tuition &amp; Fees</span></strong></span></span><br />Tuition fees are paid per degree and may be settled upfront, per term, or through approved student loan options. All financial interactions are managed through the <strong>SimU</strong> menu on a computer or phone app (under Household). Once paid, Sims can select their degree and will receive their <strong>SimU</strong> Coursework Notebook in their inventory. This is essential for completing assignments and optional <strong>Extra Credit</strong> studies.</p>
     </details>
     
-    <details>
-      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>📘 Coursework & Modules</summary>
-<ul>
-
+    <details> <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg><img src="https://i.ibb.co/gZWXK1yg/D.png" alt="" width="50" height="50" /> COURSEWORK & MODULES</summary>
 <p>Each <strong>SimU</strong> degree consists of three or six modules dependent on your playstyle, each focusing on a specific academic theme.<br><br />Modules include:</p>
 <ul>
 <li><strong>A set of coursework assignments</strong></li>
@@ -343,7 +472,7 @@ No deadlines; Sims may progress steadily or take breaks as needed. <strong>Cour
 <li><strong>Skill-building activities</strong></li>
 <li><strong>Performance tracking toward final outcomes</strong></li>
 </ul>
-<p>Modules may be worked through at any pace. There is no requirement to “keep up"; progress is entirely in the Sim’s control. <br /><br /><span class="icon-title-row"><span class="feature-title">📓 <span style="text-decoration: underline;"><strong>Coursework</strong><strong> Assignments</strong></span></span></span><br />Assignments represent applied academic tasks such as research, writing, analysis, or practical fieldwork. These may be completed using:<ul>
+<p>Modules may be worked through at any pace. There is no requirement to “keep up"; progress is entirely in the Sim’s control. <br /><br /><span class="icon-title-row"><span class="feature-title"><span style="text-decoration: underline;"><strong>Coursework</strong><strong> Assignments</strong></span></span></span><br />Assignments represent applied academic tasks such as research, writing, analysis, or practical fieldwork. These may be completed using:<ul>
 <li><strong>The SimU Coursework Notebook</strong></li>
 <li><strong>A computer</strong></li>
 <li><strong>In-world activities relevant to the subject</strong></li>
@@ -358,76 +487,76 @@ No deadlines; Sims may progress steadily or take breaks as needed. <strong>Cour
 
     </details>
     
-        <details>
-      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>🧠 Academic Progress & Outcomes</summary>
+
+<details> <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg><img src="https://i.ibb.co/8DkTSqcX/PROGRESS.png" alt="" width="50" height="50" /> ACADEMIC PROGRESS</summary>
 <ul>
-<p><span class="icon-title-row"><span class="emoji">📈</span><span style="text-decoration: underline;"><strong><span class="feature-title">Module Performance</span></strong></span></span><br />Each module contributes to the Sim’s overall academic record. After the first module is complete, performance can be checked from the <strong>SimU</strong> menu or by emailing the professor and is influenced by the following:</p>
+<p><span class="icon-title-row"><span class="emoji"></span><span style="text-decoration: underline;"><strong><span class="feature-title">Module Performance</span></strong></span></span><br />Each module contributes to the Sim’s overall academic record. After the first module is complete, performance can be checked from the <strong>SimU</strong> menu or by emailing the professor and is influenced by the following:</p>
 <ul>
 <li><strong>Assignment quality</strong></li>
 <li><strong>Optional study effort</strong></li>
 <li><strong>Consistency across modules</strong></li>
 </ul>
-<p><span class="icon-title-row"><span class="emoji">✅️</span><span style="text-decoration: underline;"><strong><span class="feature-title">Final Exam</span></strong></span></span><br />At the conclusion of the final module, Sims may take their <strong>Final Exam</strong>. Preparation is strongly encouraged; Sims who study tend to fare better. Study for the test in the <strong>Student Notebook</strong> or on the Computer. Sims will have to wait a while for the results to come in! Try not to panic in the meantime.</p>
-<p><span class="icon-title-row"><span class="emoji">🎓</span><span style="text-decoration: underline;"><strong><span class="feature-title">Degree Classification</span></strong></span></span><br />Upon graduation, Sims are awarded either
+<p><span class="icon-title-row"><span class="emoji"></span><span style="text-decoration: underline;"><strong><span class="feature-title">Final Exam</span></strong></span></span><br />At the conclusion of the final module, Sims may take their <strong>Final Exam</strong>. Preparation is strongly encouraged; Sims who study tend to fare better. Study for the test in the <strong>Student Notebook</strong> or on the Computer. Sims will have to wait a while for the results to come in! Try not to panic in the meantime.</p>
+<p><span class="icon-title-row"><span class="emoji"></span><span style="text-decoration: underline;"><strong><span class="feature-title">Degree Classification</span></strong></span></span><br />Upon graduation, Sims are awarded either
 <ul>
-<li><strong>Standard Degree</strong></li>
-<li><strong>Honors Degree</strong></li>
+<li><strong><img src="https://i.ibb.co/nMwvVvDc/Sims4-universtity-fac-expensionpack-08-icons-133.png" alt="" width="30" height="30" /> Standard Degree</strong></li>
+<li><strong><img src="https://i.ibb.co/5WCDt67H/Sims4-universtity-fac-expensionpack-08-icons-115.png" alt="" width="30" height="30" /> Honors Degree</strong></li>
 </ul>
-<br />Honors outcomes reflect sustained effort across the entire program, not a single moment of brilliance.</p>
+<br /><p>Honors outcomes reflect sustained effort across the entire program, not a single moment of brilliance.</p>
 </details>
 
- <details>
-      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>⭐ Extra Features</summary>
-      <ul class="emoji-list" style="list-style-type: circle;">
-<li>A custom skill, <strong>Academic Aptitude</strong>, which includes unlockable interactions, brand-new readable books, and even an exclusive hidden career</li>
-<li>Write and publish a guidebook to <strong>Academic Aptitude</strong> (Level 5)</li>
-<li><strong>LinkUs</strong>, the Phone app for academics that offers Study Groups, tips, and more (Level 7)</li>
+    
+<details> <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg><img src="https://i.ibb.co/B28gkvYJ/EXTRA.png" alt="" width="50" height="50" /> EXTRA FEATURES</summary>
+<br />
+<img src="https://i.ibb.co/5XbGH7CW/aa.png" alt="" width="30" height="30" /> A custom skill, <strong>Academic Aptitude</strong>, which includes unlockable interactions, brand-new readable books, and even an exclusive hidden career<br />
+<li>Write and publish a guidebook to <strong>Academic Aptitude</strong> (Level 5)<br />
+
+<br />
+<img src="https://i.ibb.co/XfpYNgrD/linkus.png" alt="" width="30" height="30" /> <strong>LinkUs</strong>, the Phone app for academics that offers Study Groups, tips, and more (Level 7)
 <li><strong>Academic eJournals </strong>are available on the <strong>SimU </strong>Phone Portal or Slablet for fast, on-the-go learning (Level 5)</li>
-<li>Start an <strong>Academic Blog </strong>with <strong>Scholar<em>ish</em></strong>, earning followers and maybe some revenue, too! (Level 7)</li>
-<li><strong>The SimU Signal</strong> is also a brand-new feature, available at Level 7 of the <strong>Academic Aptitude </strong>Skill, or to <strong>SimU</strong> students. There you can read the newsletter, contribute to it, or take on academic gigs to make some money on the side</li>
-<li><strong>SimU Online Store:</strong> Available on the <strong>SimU</strong> Phone and Computer menus, the online store sells exclusive textbooks, skill books, magazines, and more!</li>
-</ul>
+<li>Start an <strong>Academic Blog </strong>with <strong>Scholar<em>ish</em></strong>, earning followers and maybe some revenue, too! (Level 7)<br />
+
+<br /><img src="https://i.ibb.co/jvnXH97F/ss.png" alt="" width="30" height="30" /> <strong>The SimU Signal</strong> is also a brand-new feature, available at Level 7 of the <strong>Academic Aptitude </strong>Skill, or to <strong>SimU</strong> students. There you can read the newsletter, contribute to it, or take on academic gigs to make some money on the side<br />
+
+<br /><img src="https://i.ibb.co/hRSR6C3v/pp.png" alt="" width="30" height="30" /> <strong>SimU Online Store:</strong> Available on the <strong>SimU</strong> Phone and Computer menus, the online store sells exclusive textbooks, skill books, magazines, and more!
 <p>There are many other features, and you'll be notified as each is unlocked.</p></details>
 
-<details>
-      <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg>❓ FAQ & Help</summary>
-      <ul class="emoji-list" style="list-style-type: circle;">
-<ul class="emoji-list">
-<li><span class="icon-title-row"><span class="feature-title">👾 <strong>Are there any cheats for SimU?</strong></span></span><br />You can register for free by Shift+Clicking your Sim’s computer and selecting <strong>SimU Cheats</strong>. From there, you can use <strong>Complete Current Module</strong> to skip ahead to the next module. You can also Shift+Click your Sim to add a degree trait if you’d prefer to bypass the entire process.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">🏢 </span><strong><span class="feature-title">Can I work and study at the same time?</span></strong></span><br />Yes! <strong>SimU</strong> is an online school, leaving you free to juggle a full- or part-time job to make ends meet.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">🎒</span><strong><span class="feature-title">Can I study multiple degrees simultaneously?</span></strong></span><br />You can only study one degree at a time, but the registration fee is waived for returning students looking to join a new degree program.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">📈</span><strong><span class="feature-title">Can my Sim fail a degree?</span></strong></span><br />There is no failure state. Outcomes reflect effort, not perfection. <br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">🚌</span><strong><span class="feature-title">Can teens get a degree?</span></strong></span><br />Teens can register for a degree, but only once they've either graduated High School, or earned their GED online. If your Sim is currently in school, and you don't have the High School Years DLC, I've included an option under Computer → High School to quit. Then your Sim can enroll and earn their GED.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">🔎</span><strong><span class="feature-title">Do I need to register for a degree just to access the Online Skills feature?</span></strong></span><br />No. Just like the original version of Online Skills, you can <strong>Browse Digital Study Guides</strong> from the Computer whenever you like. More involved <strong>LearnLab</strong> Classes are available at Level 2 of the <strong>Academic Aptitude</strong> Skill and a Phone option at Level 6.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">🚩</span><strong><span class="feature-title">Does this mod conflict with others that add Career Jumps?</span></strong></span><br />No, the career jumps are injected into loot on join, meaning your Sim will join the career and instantly be offered the chance for a higher position due to their degree.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">🎓</span><span class="feature-title"><strong>Does this mod require Discover University?</strong> Does it override Discover University?</span></span><br />No! <strong>SimU</strong> is 100% Base Game Compatible. All you need to get started is the mod itself, and my <a href="https://www.patreon.com/posts/121729961" target="_blank"><strong>modlibrary</strong></a>. Academic Life doesn't touch <strong>Discover University</strong>'s tuning, so you can still play as usual as well if you have it installed.<br />A hidden loot is included, however, so that Sims in the DU Academic aspiration will have their progress logged without overriding any tuning.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">💻</span><strong><span class="feature-title">How do I know where to complete the assignments?</span></strong></span><br />Hover your mouse over the assignment in the career panel, and you'll see the instructions for completion.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">📜</span><strong><span class="feature-title">How long do I have to wait for my Degree/GED to arrive?</span></strong></span><br />It will arrive by mail within a couple of days.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">🕒</span><strong><span class="feature-title">How long do I have to wait for my Dissertation and/or Final Exam results?</span></strong></span><br />I've reduced the time down to just a few in-game hours. The results will arrive automatically.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">⚙️</span><strong><span class="feature-title">Is this mod compatible with Kuttoe's Career Overhaul mod?</span></strong></span><br />Yes, I've included an override for the degree objectives that includes mine and the degrees from <strong>Discover University</strong>.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">⚠️</span><strong><span class="feature-title">Why does my Sim reset when I try and complete assignments?</span></strong></span><br />If you cheated an assignment complete, especially during the final module, your Sim may cancel out their action. You can cancel the module and restart it, or Shift+Click your Sim's Computer and Reset Study Stats.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">💻</span><strong><span class="feature-title">The next assignment isn't showing up. Where is it?</span></strong></span><br />If an assignment depends on a previous task (e.g. <em>Submit Essay</em> requires <em>Write Essay</em>) and you’ve used <strong>UI Cheats</strong> or similar to complete it, you’ll need to cancel the module using the trash can icon and restart it via the <strong>SimU</strong> computer menu.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">💼</span><strong><span class="feature-title">What are the career benefits for each degree?</span></strong></span><br />From the <strong>SimU</strong> menu on a Phone or Computer, <strong>View Degree Guide</strong> to see a list of every career that the degrees benefit. All of EA's careers are included to date, plus my own custom careers if you have them installed.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">📓</span><strong><span class="feature-title">What happens if I lose the notebook?</span></strong></span><br />A replacement can be ordered from the <strong>SimU</strong> Online Store at any time.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">💬 </span><strong><span class="feature-title">What if my question isn't answered here?</span></strong></span><br />No worries, the quickest way to get help is on my <a href="https://discord.gg/fUk6SAuMSp"><strong>Discord</strong></a>, or you can check out the support options on my <a href="https://midnitetechmods.com/"><strong>website</strong></a>.<br /><br /></li>
-<li><span class="icon-title-row"><span class="emoji">💡<strong>What is the</strong></span><strong><span class="feature-title"> Academic Aptitude Skill?</span></strong></span><br />The included Skill is custom and revolves around learning and scholarly practice. It can be increased by taking online classes and using the <strong>Academic Resource Hub </strong>and unlocks multiple exclusive interactions.</li>
-</ul>
-</li>
-</ul>
+<details> <summary><svg class="arrow" viewBox="0 0 8 8"><path d="M0 0 L6 4 L0 8 Z"/></svg><img src="https://i.ibb.co/b5yJgr7k/headline-Question-Mark-873da6c8ff732f1f.png" alt="" width="50" height="50" /> FAQ & HELP</summary>
+
+<strong>Are there any cheats for SimU?</strong>
+<br />You can register for free by Shift+Clicking your Sim’s computer and selecting <strong>SimU Cheats</strong>. From there, you can use <strong>Complete Current Module</strong> to skip ahead to the next module. You can also Shift+Click your Sim to add a degree trait if you’d prefer to bypass the entire process.<br /><br />
+<strong>Can I work and study at the same time?</strong><br />Yes! <strong>SimU</strong> is an online school, leaving you free to juggle a full- or part-time job to make ends meet.<br /><br />
+<strong>Can I study multiple degrees simultaneously?</strong><br />You can only study one degree at a time, but the registration fee is waived for returning students looking to join a new degree program.<br /><br />
+<strong>Can my Sim fail a degree?</strong><br />There is no failure state. Outcomes reflect effort, not perfection. <br /><br /><strong>Can teens get a degree?</strong><br />Teens can register for a degree, but only once they've either graduated High School, or earned their GED online. If your Sim is currently in school, and you don't have the High School Years DLC, I've included an option under Computer → High School to quit. Then your Sim can enroll and earn their GED.<br /><br />
+<strong>Do I need to register for a degree just to access the Online Skills feature?</strong><br />No. Just like the original version of Online Skills, you can <strong>Browse Digital Study Guides</strong> from the Computer whenever you like. More involved <strong>LearnLab</strong> Classes are available at Level 2 of the <strong>Academic Aptitude</strong> Skill and a Phone option at Level 6.<br /><br />
+
+<strong>Does this mod conflict with others that add Career Jumps?</strong><br />No, the career jumps are injected into loot on join, meaning your Sim will join the career and instantly be offered the chance for a higher position due to their degree.<br /><br /><strong>Does this mod require Discover University?</strong> Does it override Discover University?<br />No! <strong>SimU</strong> is 100% Base Game Compatible. All you need to get started is the mod itself, and my <a href="https://www.patreon.com/posts/121729961" target="_blank"><strong>modlibrary</strong></a>. Academic Life doesn't touch <strong>Discover University</strong>'s tuning, so you can still play as usual as well if you have it installed.<br />A hidden loot is included, however, so that Sims in the DU Academic aspiration will have their progress logged without overriding any tuning.<br /><br /><strong>How do I know where to complete the assignments?</strong><br />Hover your mouse over the assignment in the career panel, and you'll see the instructions for completion.<br /><br />
+<strong>How long do I have to wait for my Degree/GED to arrive?</strong><br />It will arrive by mail within a couple of days.<br /><br /><strong>How long do I have to wait for my Dissertation and/or Final Exam results?</strong><br />I've reduced the time down to just a few in-game hours. The results will arrive automatically.<br /><br /><strong>Is this mod compatible with Kuttoe's Career Overhaul mod?</strong><br />Yes, I've included an override for the degree objectives that includes mine and the degrees from <strong>Discover University</strong>.<br /><br />
+<strong>Why does my Sim reset when I try and complete assignments?</strong><br />If you cheated an assignment complete, especially during the final module, your Sim may cancel out their action. You can cancel the module and restart it, or Shift+Click your Sim's Computer and Reset Study Stats.<br /><br /><strong>The next assignment isn't showing up. Where is it?</strong><br />If an assignment depends on a previous task (e.g. <em>Submit Essay</em> requires <em>Write Essay</em>) and you’ve used <strong>UI Cheats</strong> or similar to complete it, you’ll need to cancel the module using the trash can icon and restart it via the <strong>SimU</strong> computer menu.<br /><br /><strong>What are the career benefits for each degree?</strong><br />From the <strong>SimU</strong> menu on a Phone or Computer, <strong>View Degree Guide</strong> to see a list of every career that the degrees benefit. All of EA's careers are included to date, plus my own custom careers if you have them installed.<br /><br />
+<strong><span class="feature-title">What happens if I lose the notebook?</span></strong><br />A replacement can be ordered from the <strong>SimU</strong> Online Store at any time.<br /><br />
+<strong>What if my question isn't answered here?</strong><br />No worries, the quickest way to get help is on my <a href="https://discord.gg/fUk6SAuMSp"><strong>Discord</strong></a>, or you can check out the support options on my <a href="https://midnitetechmods.com/"><strong>website</strong></a>.<br /><br /><strong>What is the Academic Aptitude Skill?</strong><br />The included Skill is custom and revolves around learning and scholarly practice. It can be increased by taking online classes and using the <strong>Academic Resource Hub </strong>and unlocks multiple exclusive interactions.
+<p><b>Something not working properly?</b><br />Check you have:<br /><br /><strong>A.</strong> The latest version of the mod<br /> <br /><strong>B.</strong> Your version of my <img src="https://i.ibb.co/ZZtpnM6/MODLIB.png" alt="" width="20" height="20" /> ModLibrary is up-to-date and installed <br /> <br /><strong>C.</strong> You have enabled mods/CC in-game and restarted<br /> <br /><strong>D.</strong> No duplicates present (outdated versions of mods can conflict with current versions)<br /> <br /><strong>E.</strong> Tried loading your game with JUST this mod and the ModLibrary<br /><br /> If you're still having issues, check my troubleshooting and FAQ page <a href="https://midnitetechmods.com/troubleshooting">here</a>, or in‑game, open the cheat console (Ctrl+Shift+C), type <code>midnitetech.sim_report</code>, and press Enter. Using the file path it lists, find <code>midnitetech_log.html</code> and send it to me on <a href="https://discord.com/invite/4JsntVJyg4">Discord</a> or through my <a href="https://midnitetechmods.com/contact">Contact Form</a>.</p>
+
+
 </details>
 
-    <div class="footer">
-    <p style="text-align: center;">Tip: Check the Help option in-game, under the SimU Phone or Computer menu if you get stuck with something. For troubleshooting, update status and all other info, visit my site:</p>
-    <div style="text-align: center; margin-top: 1em;">
-      <a href="https://midnitetechmods.com/" target="_blank" class="website-button">🌐 midnitetechmods.com</a>
-    </div>
-     <p style="text-align: center;">Enjoy the mod, and happy Simming!<br>
-      <strong>~midnitetech</strong>💚<div style="text-align: center; margin-top: 1em;">
 
+    <div class="footer">
+<p style="text-align: center;"><b>Tip:</b> Check the Help option in-game, under the SimU Phone or Computer menu if you get stuck with something. For troubleshooting, update status and all other info, visit my site:</p>
+<div style="text-align: center; margin-top: 1em;"><a class="website-button" href="https://midnitetechmods.com/" target="_blank"><img src="https://64.media.tumblr.com/a1472046707cc95430c82727925d3464/d54814ee58e4945d-31/s2048x3072/6ebfaad8e5a177f3e1e50229606ada7c5f52a8d2.png" alt="" width="34" height="34" /> midnitetechmods.com</a></div>
+<p style="text-align: center;">Enjoy the mods, and happy Simming!<br /> <strong>~midnitetech</strong>💚</p>
+</div>
+</div>
   <script>
     function toggleMode() {
       document.body.classList.toggle('dark');
     }
+
+    window.addEventListener('pageshow', function () {
+      document.querySelectorAll('details').forEach(function (details) {
+        details.open = false;
+      });
+    });
   </script>
 </body>
 </html>
