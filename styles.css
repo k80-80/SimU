@@ -16,10 +16,16 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 16px/1.6 "SimsHeadline", Arial, sans-serif;
+  font: 16px/1.6 "Electronic Arts Text", Arial, sans-serif;
 }
 
-body * { font-family: "SimsHeadline", Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6,
+.eyebrow,
+summary,
+.section-header,
+.feature-title {
+  font-family: "SimsHeadline", Arial, sans-serif;
+}
 
 a { color: #46658e; text-underline-offset: 4px; }
 button { font: inherit; cursor: pointer; }
